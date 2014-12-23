@@ -1,27 +1,3 @@
-/*
- * TradingBot - A Java Trading system..
- * 
- * Copyright (C) 2013 Philipz (philipzheng@gmail.com)
- * http://www.tradingbot.com.tw/
- * http://www.facebook.com/tradingbot
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * 
- * Apache License, Version 2.0 授權中文說明
- * http://www.openfoundry.org/licenses/29
- * 利用 Apache-2.0 程式所應遵守的義務規定
- * http://www.openfoundry.org/tw/legal-column-list/8950-obligations-of-apache-20
- */
 package messenger;
 
 import java.util.*;
@@ -39,10 +15,21 @@ import org.jivesoftware.smack.XMPPException;
 public class gtalk implements MessageListener {
 	XMPPConnection connection;
 	private volatile static gtalk gclient;
-	
+	static String id;
+	static String pass;
 	private gtalk(){}
 	
 	public static gtalk getInstance(){
+		Properties prop = new Properties();
+		try {
+			// load a properties file
+			prop.load(new FileInputStream("C:\\Profile\\config.properties"));
+			// get the property value and print it out
+			id = prop.getProperty("GTALK");
+			pass = prop.getProperty("GTALK_PASS");
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
 		if (gclient == null) {
 			synchronized (gtalk.class){
 				if (gclient == null) {
@@ -92,7 +79,7 @@ public class gtalk implements MessageListener {
 	public void addRoster(String bot,String input){
 		gtalk c = gtalk.getInstance();
 		try {
-			c.login("GTALK_ID", "GTALK_PASSWD");
+			c.login(id, pass);
 			Roster roster = connection.getRoster();
 			roster.createEntry(input, null, null);
 		} catch (XMPPException e) {
@@ -122,7 +109,7 @@ public class gtalk implements MessageListener {
 		XMPPConnection.DEBUG_ENABLED = false;
 
 		// provide your login information here
-		c.login("GTALK_ID", "GTALK_PASSWD");
+		c.login(id, pass);
 
 		c.displayBuddyList();
 		System.out.println("-----");
@@ -132,7 +119,7 @@ public class gtalk implements MessageListener {
 
 		while (!(msg = br.readLine()).equals("bye")) {
 			// your buddy's gmail address goes here
-			c.sendMessage(msg, "YOUR_GTALK_ID");
+			c.sendMessage(msg, "xxxxxxx@gmail.com");
 		}
 
 		c.disconnect();
@@ -147,7 +134,7 @@ public class gtalk implements MessageListener {
 
 		// provide your login information here
 		try {
-			c.login("GTALK_ID", "GTALK_PASSWD");
+			c.login(id, pass);
 			c.sendMessage(msg, email);
 		} catch (XMPPException e) {
 			// TODO Auto-generated catch block

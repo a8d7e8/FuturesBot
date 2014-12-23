@@ -1,35 +1,11 @@
-/*
- * TradingBot - A Java Trading system..
- * 
- * Copyright (C) 2013 Philipz (philipzheng@gmail.com)
- * http://www.tradingbot.com.tw/
- * http://www.facebook.com/tradingbot
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * 
- * Apache License, Version 2.0 授權中文說明
- * http://www.openfoundry.org/licenses/29
- * 利用 Apache-2.0 程式所應遵守的義務規定
- * http://www.openfoundry.org/tw/legal-column-list/8950-obligations-of-apache-20
- */
 package messenger;
 
-import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Properties;
 
 import org.jivesoftware.smack.Chat;
 import org.jivesoftware.smack.ConnectionConfiguration;
@@ -44,12 +20,22 @@ import org.jivesoftware.smack.packet.Message;
 public class facebook implements MessageListener {
 	XMPPConnection connection;
 	private volatile static facebook fclient;
-	static String password = "FB_PASSWD";
 	static List<String> sendlist;
-	
+	static String id;
+	static String pass;
 	private facebook(){}
 	
 	public static facebook getInstance(){
+		Properties prop = new Properties();
+		try {
+			// load a properties file
+			prop.load(new FileInputStream("C:\\Profile\\config.properties"));
+			// get the property value and print it out
+			id = prop.getProperty("FB");
+			pass = prop.getProperty("FB_PASS");
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
 		if (fclient == null) {
 			synchronized (facebook.class){
 				if (fclient == null) {
@@ -111,7 +97,7 @@ public class facebook implements MessageListener {
 	public void addRoster(String bot,String input){
 		facebook c = facebook.getInstance();
 		try {
-			c.login("FB_ID_SN", password);
+			c.login(id, pass);
 			Roster roster = connection.getRoster();
 			roster.createEntry(input, null, null);
 		} catch (XMPPException e) {
@@ -134,23 +120,23 @@ public class facebook implements MessageListener {
 	public static void main(String args[]) throws XMPPException, IOException {
 		// declare variables
 		facebook c = facebook.getInstance();
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String msg;
+		/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String msg;*/
 
 		// turn on the enhanced debugger
 		XMPPConnection.DEBUG_ENABLED = false;
 
 		// provide your login information here
-		c.login("FB_ID_SN", password);
+		c.login(id, pass);
 
 		System.out.println("-----");
 		c.displayBuddyList();
 		System.out.println("-----");
 
-		while (!(msg = br.readLine()).equals("bye")) {
+		/*while (!(msg = br.readLine()).equals("bye")) {
 			// your buddy's gmail address goes here
-			c.sendMessage(msg, "Rec_FB_ID_SN");
-		}
+			c.sendMessage(msg, "-517003764@chat.facebook.com");
+		}*/
 
 		c.disconnect();
 		System.exit(0);
@@ -164,9 +150,13 @@ public class facebook implements MessageListener {
 
 		// provide your login information here
 		try {
-			c.login("FB_ID_SN", password);
+			c.login(id, pass);
 			c.sendMessage(msg, email);
+			Thread.sleep(500);
 		} catch (XMPPException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -181,12 +171,16 @@ public class facebook implements MessageListener {
 
 		// provide your login information here
 		try {
-			c.login("FB_ID_SN", password);
+			c.login(id, pass);
 			fclient.getBuddyList();
 			for (String list: sendlist){
 				c.sendMessage(msg, list);
+				Thread.sleep(500);
 			}
 		} catch (XMPPException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -1,27 +1,3 @@
-/*
- * TradingBot - A Java Trading system..
- * 
- * Copyright (C) 2013 Philipz (philipzheng@gmail.com)
- * http://www.tradingbot.com.tw/
- * http://www.facebook.com/tradingbot
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * 
- * Apache License, Version 2.0 授權中文說明
- * http://www.openfoundry.org/licenses/29
- * 利用 Apache-2.0 程式所應遵守的義務規定
- * http://www.openfoundry.org/tw/legal-column-list/8950-obligations-of-apache-20
- */
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -46,14 +22,14 @@ public class Futures implements java.io.Serializable {
 	public static void main(String args[]) {
 		FileInputStream fis;
 		try {
-			fis = new FileInputStream("D:\\Dropbox\\Fu.ser");
+			fis = new FileInputStream("C:\\Dropbox\\Fu.ser");
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			Futures fu = (Futures) ois.readObject();
 			ois.close();
-			fu.addHistory(7741.24);
-			fu.addvol((7787.89 / 7727.29) - 1);
-			fu.setPreSettle(7735);
-			FileOutputStream fos = new FileOutputStream("D:\\Dropbox\\Fu.ser");
+			fu.addHistory(8311.01);
+			fu.addvol((8333.56 / 8284.77) - 1);
+			fu.setPreSettle(8275);
+			FileOutputStream fos = new FileOutputStream("C:\\Dropbox\\Fu.ser");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(fu);
 			oos.close();
