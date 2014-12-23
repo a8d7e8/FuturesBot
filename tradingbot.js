@@ -31,3 +31,9 @@ sock.on('close', function() {
 	console.log('Connection closed');
 });
 
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', function (chunk, key) {
+	sock.destroy();
+	console.log("Bye!Bye!");
+	process.exit();
+});
