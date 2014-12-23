@@ -14,7 +14,7 @@ FuturesBot - 台指期當沖自動交易機器人
     ```
     npm install net mqtt
     ```
-
+    
 2. 使用方法
 
     1. 主要接受TCP Socket程式為SocketServer.java
@@ -27,6 +27,14 @@ FuturesBot - 台指期當沖自動交易機器人
 
     1. 建議使用下單大師，[http://moneyprinter.pixnet.net/blog](http://moneyprinter.pixnet.net/blog)
     2. 或者，請參閱[程式交易經驗分享系列(4) - 下單機設定及系列回顧](https://blog.everfine.com.tw/4/)
+
+4. 修改程式包裝成 Jar 檔
+
+    1. 安裝 [Ant build](http://ant.apache.org/)
+    2. 到 FuturesBot 目錄執行 ant ，就會產生好 newfutures.jar
+    3. 複製 newfutures.jar 到 VM 虛擬機上的 C:\ ，就完成程式改版佈署。
+
+### 不想自行建置執行環境可直接下載 VM 虛擬機映像檔
 
 歡迎大家加入討論程式交易，[TradingBot 粉絲團](http://www.facebook.com/tradingbot)或是[Coco-in討論區 - TradingBot程式交易機器人](http://www.coco-in.net/forum-140-1.html)
 
