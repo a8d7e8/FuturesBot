@@ -20,6 +20,8 @@ FuturesBot - 台指期當沖自動交易機器人
     1. 安裝 [Ant build](http://ant.apache.org/)
     2. 到 FuturesBot 目錄執行 ant ，就會產生好 newfutures.jar
     3. 複製 newfutures.jar 到 VM 虛擬機上的 C:\ ，就完成程式改版佈署。
+    4. 先執行 java -jar newfutures.jar
+    5. 再啟動報價，執行 node tradingbot.js ，即可開始程式交易。
 
 3. 下單機
 
@@ -34,9 +36,12 @@ FuturesBot - 台指期當沖自動交易機器人
     4. GetWednesday.java是檢查每個月台指期和摩台期結算日
     5. 請自行設定排程時間，於每日早上八點四十五分之前執行
 
-### 不想自行建置執行環境可直接下載 VM 虛擬機映像檔
+## 不想自行建置執行環境可直接下載 VM 虛擬機映像檔
+
+### 其中交易規則參數，需定期 WFA 回測後參數調整，不包含在 VM 內(因需歷史資料)。可透過 Dropbox 自動更新，歡迎來信訂閱。
 
 歡迎大家加入討論程式交易，[TradingBot 粉絲團](http://www.facebook.com/tradingbot)或是[Coco-in討論區 - TradingBot程式交易機器人](http://www.coco-in.net/forum-140-1.html)
 
-若需要支援服務，還請小額贊助，支持永續發展此TradingBot。感謝！
-聯絡資訊：[service@tradingbot.com.tw](service@tradingbot.com.tw)
+歡迎發 Pull Request 協助修改永續發展此 TradingBot 。感謝！
+
+若需要支援服務或教學顧問付費服務，歡迎來信！聯絡資訊：[service@tradingbot.com.tw](service@tradingbot.com.tw)
