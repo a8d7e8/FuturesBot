@@ -1,6 +1,6 @@
 FuturesBot - 台指期當沖自動交易機器人
 ===========
-作者：[Philipz](mailto:philipzheng@gmail.com)、[Blog](http://blog.everfine.com.tw/)
+作者：[Philipz](http://blog.everfine.com.tw/)
 
 網站：[TradingBot 開放原始碼程式交易系統](http://www.tradingbot.com.tw/)、[Facebook粉絲團](http://www.facebook.com/tradingbot)
 
