@@ -1,27 +1,34 @@
 FuturesBot - 台指期當沖自動交易機器人
 ===========
-作者：Philipz(philipzheng@gmail.com)<br/>
-網站：http://www.tradingbot.com.tw/<br/>
-Facebook粉絲團：http://www.facebook.com/tradingbot<br/>
-Blog：http://server.everfine.com.tw/blog/<br/>
+作者：[Philipz](mailto:philipzheng@gmail.com)、[Blog](http://blog.everfine.com.tw/blog/)
+
+網站：[TradingBot 開放原始碼程式交易系統](http://www.tradingbot.com.tw/)、[Facebook粉絲團](http://www.facebook.com/tradingbot)
+
 軟體授權：Apache License, Version 2.0，請見license.txt
 
-1.使用必要條件<br/>
-　a.需有群益帳戶<br/>
-　b.有開通報價API，並下載那API相關DLL檔<br/>
-　c.利用那 API.xls 去接收報價，並透過 OSWINSCK.dll 以TCP Socket傳送。
+1. 使用環境建置
 
-2.使用方法<br/>
-　a.主要接受TCP Socket程式為SocketServer.java。<br/>
-　b.策略邏輯為NewDdeClient.java。<br/>
-　c.目前設定需配合Dropbox使用，亦可自行修改不使用。<br/>
-　d.GetWednesday.java是檢查每個月台指期和摩台期結算日。<br/>
-　e.請自行設定排程時間，於每日早上八點四十五分之前執行。<br/>
+    1. 安裝 [Java Runtime Environment](https://java.com/zh_TW/download/manual_java7.jsp)
+    2. 安裝 [NodeJS](http://nodejs.org/download/)
+    3. 安裝接收報價必要 library
+    ```
+    npm install net mqtt
+    ```
 
-3.下單機<br/>
-　a.建議使用下單大師，http://moneyprinter.pixnet.net/blog<br/>
-　b.或者，請參閱<a href="http://server.everfine.com.tw/blog/archives/2013/03/4.html">程式交易經驗分享系列(4) - 下單機設定及系列回顧</a><br/>
+2. 使用方法
 
-歡迎大家加入討論程式交易，<a href="http://www.facebook.com/tradingbot">TradingBot 粉絲團</a>或<a href="http://www.coco-in.net/forum-140-1.html">Coco-in討論區 - TradingBot程式交易機器人</a><br/>
-若需要支援服務，還請小額贊助，支持永續發展此TradingBot。感謝！<br/>
-聯絡資訊：service@tradingbot.com.tw
+    1. 主要接受TCP Socket程式為SocketServer.java
+    2. 策略邏輯為NewDdeClient.java
+    3. 目前設定需配合Dropbox使用，亦可自行修改不使用
+    4. GetWednesday.java是檢查每個月台指期和摩台期結算日
+    5. 請自行設定排程時間，於每日早上八點四十五分之前執行
+
+3. 下單機
+
+    1. 建議使用下單大師，[http://moneyprinter.pixnet.net/blog](http://moneyprinter.pixnet.net/blog)
+    2. 或者，請參閱[程式交易經驗分享系列(4) - 下單機設定及系列回顧](https://blog.everfine.com.tw/4/)
+
+歡迎大家加入討論程式交易，[TradingBot 粉絲團](http://www.facebook.com/tradingbot)或是[Coco-in討論區 - TradingBot程式交易機器人](http://www.coco-in.net/forum-140-1.html)
+
+若需要支援服務，還請小額贊助，支持永續發展此TradingBot。感謝！
+聯絡資訊：[service@tradingbot.com.tw](service@tradingbot.com.tw)
