@@ -38,7 +38,7 @@ FuturesBot - 台指期當沖自動交易機器人
 
 ## 不想自行建置執行環境可直接下載 [VM 虛擬機映像檔](https://mega.co.nz/#!VFgEmCTT!5XUpUyg9u64uLcmqZPm15AtRW9aEur0parr2de0vKiA)
 匯入步驟： File -> Open ，選擇下載的 TradingBot.ova
-![VMware Player Import](https://lh3.googleusercontent.com/DEoWF6k0oVYfLUED27xw0W8H7ZDRJhufOEKb22JZgN_-yt5zGa3Qten1liBUPL5JKujPQd6iVYc=w1342-h523 "VMware Player Import")
+![VMware Player Import](https://farm9.staticflickr.com/8591/15905777107_3258068631_o_d.png "VMware Player Import")
 
 ### 其中交易規則參數，需定期 WFA 回測後參數調整，不包含在 VM 內(因需歷史資料)。可透過 Dropbox 自動更新，歡迎來信訂閱。
 
