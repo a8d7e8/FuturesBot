@@ -37,7 +37,7 @@ FuturesBot - 台指期當沖自動交易機器人
     4. GetWednesday.java是檢查每個月台指期和摩台期結算日
     5. 請自行設定排程時間，於每日早上八點四十五分之前執行
 
-## 不想自行建置執行環境可直接下載 [VM 虛擬機映像檔](https://mega.co.nz/#!VFgEmCTT!5XUpUyg9u64uLcmqZPm15AtRW9aEur0parr2de0vKiA)
+## 不想自行建置執行環境可直接下載 [VM 虛擬機映像檔](https://mega.co.nz/#!cVBFWbya!SQYisDMn7dSv-KvNUNoOR_gqKQv_udxI1LObM0fGXvk)
 帳號：bot 密碼： tradingbot
 
 匯入步驟： File -> Open ，選擇下載的 TradingBot.ova *** 記得改成 DHCP 或自家的網段 ***
