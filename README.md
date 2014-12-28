@@ -20,7 +20,7 @@ FuturesBot - 台指期當沖自動交易機器人
 
     1. 安裝 [Ant build](http://ant.apache.org/)
     2. 到 FuturesBot 目錄執行 ant ，就會產生好 newfutures.jar
-    3. 複製 newfutures.jar 到 VM 虛擬機上的 C:\ ，就完成程式改版佈署。
+    3. 將 newfutures.jar 和 lib 整個目錄複製到 VM 虛擬機上的 C:\ ，就完成程式改版佈署。
     4. 先執行 java -jar newfutures.jar
     5. 再啟動報價，執行 node tradingbot.js ，即可開始程式交易。
 
