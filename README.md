@@ -19,6 +19,8 @@ FuturesBot - 台指期當沖自動交易機器人
 2. 使用方法 - 修改程式包裝成 Jar 檔
 
     1. 安裝 [Ant build](http://ant.apache.org/)
+        1. 下載後，解壓縮
+        2. 將解壓目錄 bin ，加到 Path 環境變數。 如: C:\apache-ant-1.9.4\bin
     2. 到 FuturesBot 目錄執行 ant ，就會產生好 newfutures.jar
     3. 將 newfutures.jar 和 lib 整個目錄複製到 VM 虛擬機上的 C:\ ，就完成程式改版佈署。
     4. 先執行 java -jar newfutures.jar
