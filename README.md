@@ -1,6 +1,8 @@
 FuturesBot - 台指期當沖自動交易機器人
 ===========
 # 請注意，交易規則不一定適合每個人，請量力而為！
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tradingbot/FuturesBot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 作者：[Philipz](http://blog.everfine.com.tw/)
 
 網站：[TradingBot 開放原始碼程式交易系統](http://www.tradingbot.com.tw/)、[Facebook粉絲團](http://www.facebook.com/tradingbot)
